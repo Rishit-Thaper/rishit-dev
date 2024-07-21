@@ -1,9 +1,9 @@
-import { Link } from "@chakra-ui/react";
+import { HStack, Text } from "@chakra-ui/react";
 
 export default function Page() {
   return (
-    <Link href="/about" color="blue.400" _hover={{ color: "blue.500" }}>
-      About
-    </Link>
+    <HStack>
+      <Text fontSize={80}>Rishit</Text>
+    </HStack>
   );
 }
