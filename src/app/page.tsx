@@ -1,5 +1,6 @@
-import { Text } from "@chakra-ui/react";
+"use client"
+import Hero from "@/components/Hero";
 
 export default function Page() {
-  return <Text>Rishit</Text>;
+  return <Hero />;
 }

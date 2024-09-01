@@ -1,7 +1,7 @@
-"use client";
 import { Providers } from "@/context/providers";
 import "@/styles/styles.scss";
 import Navbar from "@/components/Navbar";
+import { colors } from "@/tokens/colors";
 
 export default function RootLayout({
   children,
@@ -10,7 +10,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ backgroundColor: "#080B12", color: "#ffffff" }}>
+      <body
+        style={{ backgroundColor: `${colors.main}`, color: `${colors.text}` }}
+      >
         <Navbar />
         <Providers>{children}</Providers>
       </body>

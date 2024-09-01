@@ -14,6 +14,7 @@ import { GrTechnology } from "react-icons/gr";
 import { FaProjectDiagram } from "react-icons/fa";
 import { MdCallMade } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { colors, fonts } from "@/tokens/colors";
 
 const NavMenuItems = [
   { title: "About Me", icon: <SiAboutdotme /> },
@@ -27,11 +28,16 @@ const Navbar = () => {
     <HStack
       justifyContent="space-between"
       alignItems="center"
-      background="#0D1017"
+      background={colors.secondary}
       p={12}
     >
       <Box>
-        <Text fontSize={25} id="name" fontWeight="bold" fontFamily="Montserrat">
+        <Text
+          fontSize={25}
+          id="name"
+          fontWeight="bold"
+          fontFamily={fonts.heading}
+        >
           {"</>"} Rishit
         </Text>
       </Box>
@@ -40,20 +46,20 @@ const Navbar = () => {
           py={6}
           px={16}
           borderRadius={4}
-          bg="#080B12"
+          bg={colors.main}
           mx={6}
           fontWeight="bold"
-          fontFamily="Montserrat"
+          fontFamily="{fonts.heading}"
         >
           Resume
         </Button>
-        <Menu>
+        <Menu isLazy>
           <MenuButton
             as={IconButton}
             aria-label="Menu"
             icon={<RxHamburgerMenu size={30} />}
           />
-          <MenuList bg="#0D1017" py={6} px={16} borderRadius={4}>
+          <MenuList bg={colors.secondary} py={6} px={16} borderRadius={4}>
             {NavMenuItems.map((item) => (
               <MenuItem key={item.title} icon={item.icon} my={12}>
                 {item.title}
