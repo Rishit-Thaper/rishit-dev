@@ -1,7 +1,9 @@
 import { IconType } from 'react-icons';
-import { FaGitAlt, FaSass, FaNodeJs, FaReact } from 'react-icons/fa';
+import { FaGitAlt, FaSass, FaNodeJs, FaReact, FaLinkedin } from 'react-icons/fa';
+import { FaSquareXTwitter, FaSquareGithub } from 'react-icons/fa6';
 import { FiFigma } from 'react-icons/fi';
-import { SiExpress, SiMongodb, SiPostman, SiCplusplus } from 'react-icons/si';
+import { RiInstagramFill } from 'react-icons/ri';
+import { SiExpress, SiMongodb, SiPostman, SiCplusplus, SiGmail } from 'react-icons/si';
 import { TbBrandTypescript, TbSql } from 'react-icons/tb';
 
 export const badges: { alt: string; imageUrl: string }[] = [
@@ -98,4 +100,27 @@ export const icons: { name: string; icon: IconType }[] = [
   { name: 'sql1', icon: TbSql },
   { name: 'postman1', icon: SiPostman },
   { name: 'cplusplus1', icon: SiCplusplus },
+];
+
+export const footerIcons: { links: string; icon: IconType }[] = [
+  {
+    links: 'https://www.linkedin.com/in/rishit-5463261a6/',
+    icon: FaLinkedin,
+  },
+  {
+    links: 'https://www.instagram.com/rishit_thaper/',
+    icon: RiInstagramFill,
+  },
+  {
+    links: 'mailto:thaperrishit@gmail.com',
+    icon: SiGmail,
+  },
+  {
+    links: 'https://github.com/Rishit-Thaper',
+    icon: FaSquareGithub,
+  },
+  {
+    links: 'https://x.com/rishit_9703',
+    icon: FaSquareXTwitter,
+  },
 ];

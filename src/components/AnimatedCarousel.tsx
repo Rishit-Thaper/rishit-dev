@@ -2,6 +2,7 @@ import { icons } from '@/utils/uiElements';
 import { Box, Flex } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icon';
+import { colors } from '@/tokens/colors';
 
 const animationDirection = [{ x: ['0%', '-100%'] }, { x: ['-100%', '0%'] }];
 
@@ -15,12 +16,12 @@ const AnimatedCarousel = () => {
       >
         {icons.map(({ name, icon }) => (
           <Flex key={name} direction="column" align="center" mr={10}>
-            <Icon icon={icon} />
+            <Icon icon={icon} color={colors.greyTwo} />
           </Flex>
         ))}
         {icons.map(({ name, icon }) => (
           <Flex key={name} direction="column" align="center" mr={10}>
-            <Icon icon={icon} />
+            <Icon icon={icon} color={colors.greyTwo} />
           </Flex>
         ))}
       </motion.div>
