@@ -124,3 +124,30 @@ export const footerIcons: { links: string; icon: IconType }[] = [
     icon: FaSquareXTwitter,
   },
 ];
+
+export const projects = [
+  {
+    title: "Dareventure",
+    desc: "Created an engaging party game app using Next.js, featuring popular games like Truth or Dare, Never Have I Ever, and Would You Rather, with options for both adults and PG13.",
+    techStack: ["Next.js", "MongoDB"],
+    url: "https://dareventure.vercel.app/"
+  },
+  {
+    title: "Flirtfolio",
+    desc: "Developed a playful pickup line app with a Next.js frontend, allowing users to generate or contribute lines.",
+    techStack: ["Next.js", "Appwrite"],
+    url: "https://flirtfolio.vercel.app/" 
+  },
+  {
+    title: "Linkify",
+    desc: "A versatile web application facilitating efficient management and sharing of links.",
+    techStack: ["Node.js", "Express", "MongoDB", "React.js", "TypeScript"],
+    url: "https://linkify-kappa.vercel.app/home" 
+  },
+  {
+    title: "BlogShots",
+    desc: "Crafted a dynamic blogging platform with a concise 150-word content limit.",
+    techStack: ["MongoDB", "ExpressJS", "ReactJS", "NodeJS"],
+    url: ""
+  }
+];

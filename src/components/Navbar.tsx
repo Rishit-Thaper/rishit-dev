@@ -1,5 +1,6 @@
 import { colors, fonts } from '@/tokens/colors';
 import { Box, Button, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 import { FaProjectDiagram } from 'react-icons/fa';
 import { GrTechnology } from 'react-icons/gr';
 import { MdCallMade } from 'react-icons/md';
@@ -7,10 +8,10 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { SiAboutdotme } from 'react-icons/si';
 
 const NavMenuItems = [
-  { title: 'About Me', icon: <SiAboutdotme /> },
-  { title: 'Skills', icon: <GrTechnology /> },
-  { title: 'Projects', icon: <FaProjectDiagram /> },
-  { title: 'Contact', icon: <MdCallMade /> },
+  { title: 'About Me', icon: <SiAboutdotme />, url: '#about' },
+  { title: 'Skills', icon: <GrTechnology />, url: '#skills' },
+  { title: 'Projects', icon: <FaProjectDiagram />, url: '#projects' },
+  { title: 'Contact', icon: <MdCallMade />, url: '#contact' },
 ];
 
 const Navbar = () => {
@@ -25,13 +26,15 @@ const Navbar = () => {
         <Button py={6} px={16} borderRadius={4} bg={colors.main} mx={6} fontWeight="bold" fontFamily="{fonts.heading}">
           Resume
         </Button>
-        <Menu isLazy>
+        <Menu isLazy > 
           <MenuButton as={IconButton} aria-label="Menu" icon={<RxHamburgerMenu size={30} />} />
-          <MenuList bg={colors.secondary} py={6} px={16} borderRadius={4}>
+          <MenuList bg={colors.borderBlue} py={6} px={16} borderRadius={4}blur="40px" >
             {NavMenuItems.map((item) => (
-              <MenuItem key={item.title} icon={item.icon} my={12}>
-                {item.title}
-              </MenuItem>
+              <Link href={item.url} key={item.title} >
+                <MenuItem key={item.title} icon={item.icon} my={12}color={colors.text} >
+                  {item.title}
+                </MenuItem>
+              </Link>
             ))}
           </MenuList>
         </Menu>

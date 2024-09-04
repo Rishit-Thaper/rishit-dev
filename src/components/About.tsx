@@ -5,7 +5,7 @@ import HighlightText from './HighlightText';
 
 const About = () => {
   return (
-    <VStack alignItems="flex-start" p={6} bg={colors.secondary} gap={4}>
+    <VStack alignItems="flex-start" p={6} bg={colors.secondary} gap={4} id='about'>
       <Heading fontFamily={fonts.heading}>Hello World 👋🏻</Heading>
       <Text fontFamily={fonts.body} letterSpacing={1} lineHeight={8}>
         I&apos;m <HighlightText text="Rishit" fontWeight="bold" color={colors.highlightText} />, a passionate software

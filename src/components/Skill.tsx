@@ -6,7 +6,7 @@ import React from 'react';
 
 const Skill = () => {
   return (
-    <VStack alignItems="flex-start" p={6} bg={colors.secondary} gap={4}>
+    <VStack alignItems="flex-start" p={6} bg={colors.secondary} gap={4} id="skills">
       <Heading fontFamily={fonts.heading}>What I know 🧑🏻‍💻</Heading>
       <HStack flexWrap="wrap" gap={3}>
         {badges.map((badge, index) => (

@@ -1,6 +1,5 @@
-import { colors } from '@/tokens/colors';
 import { IconType } from 'react-icons';
 
-export const Icon = ({ icon: IconComponent, color }: { icon: IconType; color: string }) => {
-  return <IconComponent size={30} color={color} />;
+export const Icon = ({ icon: IconComponent, color, size }: { icon: IconType; color: string; size?: number }) => {
+  return <IconComponent size={size ?? 30} color={color} />;
 };

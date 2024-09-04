@@ -6,6 +6,9 @@ export const colors = {
   secondaryText: '#002A78',
   greyOne: '#363535',
   greyTwo: '#3F4249',
+  greyTransparent: '',
+  borderBlue: '#222f47',
+  highlightTextTransparent: '#002A7840',
 };
 
 export const fonts = {
