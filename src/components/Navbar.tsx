@@ -23,15 +23,26 @@ const Navbar = () => {
         </Text>
       </Box>
       <HStack justifyContent="space-evenly" alignItems="center">
-        <Button py={6} px={16} borderRadius={4} bg={colors.main} mx={6} fontWeight="bold" fontFamily="{fonts.heading}">
+        <Button
+          as="a"
+          py={6}
+          px={16}
+          borderRadius={4}
+          bg={colors.main}
+          mx={6}
+          target='_blank'
+          fontWeight="bold"
+          fontFamily="{fonts.heading}"
+          href="https://drive.google.com/file/d/1pbiw-gIYyvqgDhWMY7HdoEJjbs4K0zKO/view?usp=sharing"
+        >
           Resume
         </Button>
-        <Menu isLazy > 
+        <Menu isLazy>
           <MenuButton as={IconButton} aria-label="Menu" icon={<RxHamburgerMenu size={30} />} />
-          <MenuList bg={colors.borderBlue} py={6} px={16} borderRadius={4}blur="40px" >
+          <MenuList bg={colors.borderBlue} py={6} px={16} borderRadius={4} blur="40px">
             {NavMenuItems.map((item) => (
-              <Link href={item.url} key={item.title} >
-                <MenuItem key={item.title} icon={item.icon} my={12}color={colors.text} >
+              <Link href={item.url} key={item.title}>
+                <MenuItem key={item.title} icon={item.icon} my={12} color={colors.text}>
                   {item.title}
                 </MenuItem>
               </Link>
