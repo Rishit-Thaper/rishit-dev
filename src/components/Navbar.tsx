@@ -30,10 +30,10 @@ const Navbar = () => {
           borderRadius={4}
           bg={colors.main}
           mx={6}
-          target='_blank'
+          target="_blank"
           fontWeight="bold"
           fontFamily="{fonts.heading}"
-          href="https://drive.google.com/file/d/1pbiw-gIYyvqgDhWMY7HdoEJjbs4K0zKO/view?usp=sharing"
+          href="https://drive.google.com/file/d/1L67x6dO78GO3Ckp5GAh1AKpV-h3e2m8x/view?usp=sharing"
         >
           Resume
         </Button>
