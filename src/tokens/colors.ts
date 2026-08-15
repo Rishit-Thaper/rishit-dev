@@ -7,6 +7,7 @@ export const colors = {
   greyOne: '#363535',
   greyTwo: '#3F4249',
   greyTransparent: '',
+  mutedText: 'rgba(255, 255, 255, 0.65)',
   borderBlue: '#222f47',
   highlightTextTransparent: '#002A7840',
 };
