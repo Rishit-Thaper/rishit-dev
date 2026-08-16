@@ -2,7 +2,7 @@ import { GoogleGenAI, type Content, type FunctionDeclaration, type Part } from '
 
 const EMBEDDING_MODEL = 'gemini-embedding-001';
 export const EMBEDDING_DIMENSIONS = 768;
-export const CHAT_MODEL = 'gemini-flash-latest';
+export const CHAT_MODEL = 'gemini-3.5-flash-lite';
 const MAX_TOOL_ITERATIONS = 4;
 
 let client: GoogleGenAI | null = null;
@@ -25,6 +25,7 @@ export async function embedText(
     contents: [text],
     config: { outputDimensionality: EMBEDDING_DIMENSIONS, taskType },
   });
+
   const values = response.embeddings?.[0]?.values;
   if (!values) throw new Error('Gemini returned no embedding values');
   return values;
