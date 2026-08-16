@@ -30,6 +30,13 @@ Aiven's lower-tier PostgreSQL plans can idle out. `.github/workflows/db-health-c
 database every 12 hours via GitHub Actions (`scripts/db-health-check.mjs`) — add `DATABASE_URL` as a
 repo secret (Settings → Secrets and variables → Actions) for it to run.
 
+## Updating the resume
+
+The resume is written in LaTeX (`resume/resume.tex`), not managed as a manually-uploaded file. Edit it
+and push to `main` — `.github/workflows/build-resume.yml` compiles it and commits the result to
+`public/resume.pdf`, so the resume URL (`/resume.pdf`, same-origin) never changes across updates; only
+its content does. To compile locally first: `tectonic resume/resume.tex` (via `brew install tectonic`).
+
 ## Deploying
 
 Deploy as normal on Vercel (Hobby tier is fine) and set the same env vars from `.env.local` in the

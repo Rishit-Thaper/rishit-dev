@@ -95,5 +95,5 @@ export const contact = {
   github: 'https://github.com/Rishit-Thaper',
   instagram: 'https://www.instagram.com/rishit_thaper/',
   twitter: 'https://x.com/rishit_9703',
-  resumeUrl: 'https://drive.google.com/file/d/1L67x6dO78GO3Ckp5GAh1AKpV-h3e2m8x/view?usp=sharing',
+  resumeUrl: '/resume.pdf',
 };
