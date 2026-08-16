@@ -1,9 +1,7 @@
 'use client';
 import { Providers } from '@/context/providers';
 import '@/styles/styles.scss';
-import Navbar from '@/components/Navbar';
 import { colors, fonts } from '@/tokens/colors';
-import Footer from '@/components/Footer';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,10 +10,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/rishit.png" />
         <title>Rishit</title>
       </head>
-      <body style={{ backgroundColor: `${colors.main}`, color: `${colors.text}`, fontFamily: `${fonts.body}` }}>
-        <Navbar />
-        <Providers>{children}</Providers>
-        <Footer />
+      <body
+        style={{
+          backgroundColor: `${colors.main}`,
+          color: `${colors.text}`,
+          fontFamily: `${fonts.body}`,
+          height: '100dvh',
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <Providers>
+          <div style={{ flex: '1 1 auto', display: 'flex', flexDirection: 'column', minHeight: 0 }}>{children}</div>
+        </Providers>
       </body>
     </html>
   );

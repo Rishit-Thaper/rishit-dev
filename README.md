@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# rishit-dev
 
-## Getting Started
+A portfolio that's a RAG chatbot instead of sectioned pages. It answers as Rishit, grounded on
+`src/content/knowledge/{profile,resume}.md`, and can hand over a resume link, share LinkedIn/GitHub,
+check calendar availability, and book real Google Calendar calls with a Meet link.
 
-First, run the development server:
+Stack: Next.js (App Router) + Chakra UI, Gemini API (chat + embeddings), Aiven PostgreSQL + pgvector,
+Google Calendar API (OAuth). Everything runs on free tiers — see `.env.example` for what's needed.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. `npm install`
+2. Copy `.env.example` to `.env.local` and fill in real values (never put real secrets in `.env.example` —
+   it's tracked by git).
+3. Apply the DB schema: `npm run init-db`
+4. Embed the knowledge base into Postgres: `npm run ingest` (rerun any time the knowledge markdown changes)
+5. Mint a Calendar OAuth refresh token: `npm run oauth-setup` (one-time; opens a browser consent flow)
+6. `npm run dev`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `npm run dev` / `npm run build` / `npm run start` / `npm run lint` / `npm run format`
+- `npm run init-db` — applies `db/schema.sql` (pgvector extension, `documents`, `leads` tables)
+- `npm run ingest` — chunks and embeds `src/content/knowledge/*.md` into the `documents` table
+- `npm run oauth-setup` — one-time Google OAuth consent flow to get `GOOGLE_REFRESH_TOKEN`
 
-## Learn More
+## Keeping the DB alive
 
-To learn more about Next.js, take a look at the following resources:
+Aiven's lower-tier PostgreSQL plans can idle out. `.github/workflows/db-health-check.yml` pings the
+database every 12 hours via GitHub Actions (`scripts/db-health-check.mjs`) — add `DATABASE_URL` as a
+repo secret (Settings → Secrets and variables → Actions) for it to run.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Updating the resume
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The resume is written in LaTeX (`resume/resume.tex`), not managed as a manually-uploaded file. Edit it
+and push to `main` — `.github/workflows/build-resume.yml` compiles it and commits the result to
+`public/resume.pdf`, so the resume URL (`/resume.pdf`, same-origin) never changes across updates; only
+its content does. To compile locally first: `tectonic resume/resume.tex` (via `brew install tectonic`).
 
-## Deploy on Vercel
+## Deploying
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deploy as normal on Vercel (Hobby tier is fine) and set the same env vars from `.env.local` in the
+project's Vercel settings.

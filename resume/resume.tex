@@ -1,0 +1,100 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.45in,top=0.35in,bottom=0.35in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\linespread{0.92}
+
+\definecolor{accent}{HTML}{417DE0}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdftitle={Rishit - Resume},
+  pdfauthor={Rishit},
+}
+
+\pagestyle{empty}
+
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+\setlist[itemize]{leftmargin=1.1em, itemsep=0pt, topsep=1pt, parsep=0pt}
+
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill \textit{#2}\\
+  \noindent#3 \hfill #4\\[2pt]%
+}
+
+\begin{document}
+
+\begin{center}
+  {\Huge \textbf{Rishit}}\\[4pt]
+  \href{mailto:thaperrishit@gmail.com}{thaperrishit@gmail.com} ~|~
+  7056761469 ~|~
+  Ambala, India ~|~
+  \href{https://www.linkedin.com/in/rishit-5463261a6/}{linkedin.com/in/rishit-5463261a6} ~|~
+  \href{https://github.com/Rishit-Thaper}{github.com/Rishit-Thaper}
+\end{center}
+
+\section*{Professional Summary}
+Full-Stack Software Engineer with 2+ years of experience building production web applications across the frontend (React, Next.js) and backend (Node.js, NestJS, Express.js), including work on MongoDB, PostgreSQL, and Google Cloud Platform. Experienced in Agile/Scrum SDLC, system architecture, API design, and technology migrations. Currently expanding into AI engineering: building \mbox{Retrieval-Augmented} Generation (RAG) pipelines, vector search, and LLM-powered agents with the Google Gemini API and OpenAI embeddings.
+
+\section*{Work Experience}
+\entry{Logicease Tecno Solutions Pvt. Ltd.}{March 2024 - Present}{Software Engineer (Full-Stack)}{Ambala, India}
+\begin{itemize}
+  \item Led the platform migration from a Firebase-centric model to a scalable Next.js, NestJS, and PostgreSQL architecture, improving average database query performance by approximately 35\% through optimized schema design and indexing.
+  \item Migrated core services off Firebase to a dedicated backend architecture, cutting estimated monthly infrastructure costs by 20-25\% while improving API reliability and modularity for high-scale data loads.
+  \item Built GIA (Globhe Intelligent Agent), a \mbox{Retrieval-Augmented} Generation (RAG) assistant using the OpenAI Embeddings API, capable of autonomously performing actions on behalf of users, reducing manual actions for clients and drone operators by 50-60\%.
+  \item Collaborated directly with the DroneDeploy engineering team to integrate Data Processing APIs, enabling automated drone mapping and analysis within the platform.
+  \item Enhanced a streamlined order flow management system for Globhe using React.js, optimizing frontend and backend processes for Clients, Drone Operators, and Admins, cutting order processing time by 25\% and reducing Client Delivery Team inquiries by 30\%.
+  \item Implemented a Site Evaluation feature for Globhe, enabling efficient mission planning by consolidating data, cutting planning time by 30\% for the Client Delivery Team and the Drone Operators.
+  \item Improved a data evaluation tool for Globhe's Admin and Client Delivery Team, allowing seamless approval, rejection, or change requests for drone operator file submissions, boosting review efficiency by 20\%.
+\end{itemize}
+
+\section*{Achievements}
+\begin{itemize}
+  \item \textbf{On-site Opportunity (September 2024 - October 2024):} Selected and accepted the offer for an international assignment in Stockholm, Sweden, to work closely with Binogi, a Logicease client, focusing on product optimization, issue resolution, and cross-team collaboration.
+\end{itemize}
+
+\section*{Technical Skills}
+\begin{itemize}
+  \item \textbf{Programming Languages:} JavaScript (ES6+), TypeScript, C++, SQL
+  \item \textbf{Frontend Development:} React.js (React), Next.js, HTML5, CSS3, SCSS, Chakra UI
+  \item \textbf{Backend Development:} Node.js, Express.js, NestJS (Nest.js), REST APIs
+  \item \textbf{Cloud \& DevOps:} Google Cloud Platform (GCP), Firebase, Docker, GitHub Actions
+  \item \textbf{Databases:} MongoDB, PostgreSQL, SQL
+  \item \textbf{AI / ML Tools:} Google Gemini API, OpenAI Embeddings API, \mbox{Retrieval-Augmented} Generation (RAG), Vector Search, pgvector
+  \item \textbf{Tools:} Git, GitHub, Bash, Postman, Supabase, Google Antigravity, OpenAI Codex
+  \item \textbf{Methodologies:} Agile, Scrum, SDLC, Code Reviews, Technical Documentation
+\end{itemize}
+
+\section*{Projects}
+\textbf{ProfAIle}\\
+An AI-driven platform that parses resume data into structured JSON to instantly render portfolios across a curated, open-source theme library, welcoming community contributions to continuously expand the collection of minimal, modern, and professional themes.\\
+\textit{Technologies used:} Next.js, Supabase, TypeScript, Google Gemini API.
+
+\vspace{2pt}
+\noindent\textbf{CloudDrop}\\
+A self-hostable file sharing platform supporting resumable uploads up to 10GB via GCS Signed URLs, with automatic 7-day expiry enforced through GCS Object Lifecycle policies and instant QR code sharing for effortless link distribution.\\
+\textit{Technologies used:} Next.js, NestJS, TypeScript, Supabase, PostgreSQL, Google Cloud Storage, Google Cloud Run, Docker.
+
+\vspace{2pt}
+\noindent\textbf{Portfolio Chatbot}\\
+A \mbox{Retrieval-Augmented} Generation (RAG) powered AI agent replacing the traditional sectioned portfolio, grounded in real resume and profile data via Gemini embeddings and pgvector, with tool calling for real actions like Google Calendar scheduling.\\
+\textit{Technologies used:} Next.js, TypeScript, Google Gemini API, Aiven PostgreSQL + pgvector, Google Calendar API.
+
+\section*{Education}
+\entry{Kurukshetra University}{June 2024}{Bachelor of Technology, Computer Science}{Kurukshetra, India}
+\begin{itemize}
+  \item 8.5/10 Aggregate CGPA
+  \item Coursework: Data Structures, Algorithms, Web Technologies, Databases (DBMS), Object Oriented Programming (OOP), Neural Networks, Cloud Computing
+\end{itemize}
+
+\end{document}
