@@ -8,6 +8,10 @@ import { fetchGithubSummary } from '@/lib/github';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/rishit-5463261a6/';
 
 export const runtime = 'nodejs';
+// Default serverless timeout (10s on Vercel) isn't enough here: embedding + vector
+// search + a streamed LLM call, and tool calls (calendar check/booking) add a
+// second full LLM round-trip plus Google Calendar API latency on top of that.
+export const maxDuration = 60;
 
 const RATE_LIMIT = { windowMs: 60_000, max: 12 };
 const buckets = new Map<string, { count: number; resetAt: number }>();

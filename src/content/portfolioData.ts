@@ -1,9 +1,9 @@
 export const about = {
   name: 'Rishit',
-  title: 'Software Engineer',
+  title: 'Full-Stack Software Engineer',
   location: 'Ambala, India',
   summary:
-    "I'm a software engineer with a practical full-stack background centered around JavaScript and TypeScript — React, Next.js, Node.js, NestJS, MongoDB, SQL, Firebase, and GCP. I've worked on production client applications, improved business workflows, and led architecture migrations. Lately I've been going deeper into AI engineering — RAG, embeddings, agents, and developer tooling — and this portfolio itself is one of those projects: a RAG-powered chatbot instead of a static page.",
+    "I'm a full-stack software engineer with 2+ years of experience across the frontend (React, Next.js) and backend (Node.js, NestJS, Express.js) — plus MongoDB, PostgreSQL, and GCP in production. I've worked on production client applications, improved business workflows, and led architecture migrations. Lately I've been going deeper into AI engineering — RAG, embeddings, agents, and developer tooling — and this portfolio itself is one of those projects: a RAG-powered chatbot instead of a static page.",
   highlights: [
     'Builder-first — I learn by actually shipping things, not just reading about them.',
     'Product-minded — I notice inefficient workflows and think about whether software can remove them.',
@@ -14,11 +14,13 @@ export const about = {
 export const experience = [
   {
     company: 'Logicease Tecno Solutions Pvt. Ltd.',
-    title: 'Software Engineer',
+    title: 'Software Engineer (Full-Stack)',
     location: 'Ambala, India',
     dates: 'March 2024 – Present',
     bullets: [
-      'Leading the platform migration from a Firebase-centric model to a robust architecture using Next.js, NestJS, PostgreSQL, and GCP to handle high-scale data loads.',
+      'Led the platform migration from a Firebase-centric model to a scalable Next.js, NestJS, and PostgreSQL architecture, improving average database query performance by approximately 35% through optimized schema design and indexing.',
+      'Migrated core services off Firebase to a dedicated backend architecture, cutting estimated monthly infrastructure costs by 20-25% while improving API reliability and modularity for high-scale data loads.',
+      'Built GIA (Globhe Intelligent Agent), a RAG-powered assistant using the OpenAI Embeddings API, capable of autonomously performing actions on behalf of users — reducing manual actions for clients and drone operators by 50-60%.',
       'Collaborated directly with the DroneDeploy engineering team to integrate Data Processing APIs, enabling automated drone mapping and analysis.',
       'Built a streamlined order flow management system for Globhe with React.js, cutting order processing time by 25% and reducing Client Delivery Team inquiries by 30%.',
       'Implemented a Site Evaluation feature for Globhe, cutting mission-planning time by 30% for the Client Delivery Team and Drone Operators.',
@@ -55,17 +57,36 @@ export const education = {
 
 export const skills = [
   { category: 'Languages', items: ['JavaScript (ES6+)', 'TypeScript', 'C++', 'SQL', 'Bash'] },
-  { category: 'Frontend', items: ['React.js', 'Next.js', 'HTML5', 'CSS3', 'SCSS', 'Chakra UI'] },
-  { category: 'Backend', items: ['Node.js', 'Express.js', 'NestJS', 'REST APIs'] },
+  { category: 'Frontend Development', items: ['React.js', 'Next.js', 'HTML5', 'CSS3', 'SCSS', 'Chakra UI'] },
+  { category: 'Backend Development', items: ['Node.js', 'Express.js', 'NestJS', 'REST APIs'] },
   { category: 'Databases', items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase/Firestore', 'Supabase'] },
-  { category: 'Cloud & Infra', items: ['Google Cloud Platform', 'Vercel', 'Netlify', 'Docker', 'Redis'] },
   {
-    category: 'AI / Emerging',
-    items: ['Gemini API', 'RAG', 'Vector Embeddings', 'AI Agents', 'Google ADK', 'pgvector'],
+    category: 'Cloud & DevOps',
+    items: ['Google Cloud Platform', 'Firebase', 'Docker', 'GitHub Actions', 'Vercel', 'Netlify', 'Redis'],
   },
+  {
+    category: 'AI / ML Tools',
+    items: [
+      'Gemini API',
+      'OpenAI Embeddings API',
+      'RAG',
+      'Vector Search',
+      'AI Agents',
+      'Google ADK',
+      'pgvector',
+    ],
+  },
+  { category: 'Methodologies', items: ['Agile', 'Scrum', 'SDLC', 'Code Reviews', 'Technical Documentation'] },
 ];
 
 export const projects = [
+  {
+    name: 'GIA (Globhe Intelligent Agent)',
+    description:
+      'A RAG-powered assistant built for Globhe using the OpenAI Embeddings API, capable of autonomously performing actions on behalf of users — reducing manual actions for clients and drone operators by 50-60%.',
+    tech: ['RAG', 'OpenAI Embeddings API', 'Node.js', 'NestJS', 'PostgreSQL'],
+    url: null,
+  },
   {
     name: 'Portfolio Chatbot',
     description:
