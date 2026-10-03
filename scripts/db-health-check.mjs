@@ -8,10 +8,11 @@ if (!process.env.DATABASE_URL) {
 // Strip sslmode from the URL — pg-connection-string now treats sslmode=require as
 // verify-full, which overrides the explicit rejectUnauthorized:false below and
 // rejects Aiven's cert. Force our own ssl config instead.
-const connectionString = process.env.DATABASE_URL.replace(/[?&]sslmode=[^&]*/, '');
+const url = new URL(process.env.DATABASE_URL);
+url.searchParams.delete('sslmode');
 
 const client = new Client({
-  connectionString,
+  connectionString: url.toString(),
   ssl: { rejectUnauthorized: false },
 });
 
